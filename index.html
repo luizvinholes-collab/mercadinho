@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Mercadinho Porto Itália — acesso rápido ao aplicativo e primeiros passos para moradores." />
+  <title>Mercadinho Porto Itália</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0F3D2E" />
+</head>
+
+<body>
+  <script>
+    window.PAGE_CONFIG = {
+      siteName: "Mercadinho Porto Itália",
+      welcomeMessage: "Bem-vindo! Baixe o aplicativo e comece a usar o mercadinho autônomo do condomínio.",
+
+      links: {
+        googlePlayUrl: "https://play.google.com/store/apps/details?id=br.com.vertitecnologia.vmmarket.okeo&pcampaignid=web_share",
+        appStoreUrl: "https://apps.apple.com/br/app/okeo-minimercados/id6444526749",
+
+        // Preencha após hospedar (usado para gerar o QR definitivo)
+        pagePublicUrl: "PLACEHOLDER_PUBLIC_PAGE_URL",
+
+        whatsappUrl: "https://wa.me/5551995094869"
+      },
+
+      funcionamento: {
+        horario: "24 horas"
+      },
+
+      pagamento: {
+        formas: "Pagamentos via Pix, débito e crédito."
+      },
+
+      regras: {
+        // Mantidos placeholders (você disse que o resto não precisa)
+        comoFunciona: "PLACEHOLDER_COMO_FUNCIONA",
+        regrasBasicas: "PLACEHOLDER_REGRAS_BÁSICAS"
+      },
+
+      cadastro: {
+        comoCadastrar: [
+          "Abra o aplicativo.",
+          "Toque em “Cadastrar” e siga as instruções.",
+          "Use os dados solicitados pelo aplicativo."
+        ]
+      },
+
+      acesso: {
+        comoAcessar: [
+          "Após cadastrar, você terá acesso pelo app.",
+          "Siga as orientações do próprio aplicativo para usar o mercadinho."
+        ]
+      },
+
+      passos: {
+        comoBaixar: [
+          "Escolha a loja (Android ou iPhone).",
+          "Toque em “Baixar aplicativo”.",
+          "Instale e abra o aplicativo."
+        ]
+      },
+
+      faq: [
+        {
+          q: "Não tenho o aplicativo. Como faço?",
+          a: "Use os botões de download na página para instalar pelo Android (Google Play) ou iPhone (App Store)."
+        },
+        {
+          q: "Como faço o cadastro?",
+          a: "No aplicativo, toque em “Cadastrar” e siga as etapas indicadas."
+        },
+        {
+          q: "Tenho dúvidas. Como falo com o atendimento?",
+          a: "Use o botão do WhatsApp na seção de atendimento."
+        }
+      ],
+
+      ui: {
+        ctaAndroidLabel: "Baixar aplicativo para Android",
+        ctaAppleLabel: "Baixar aplicativo para iPhone",
+
+        sectionPrimeirosPassos: "Primeiros passos",
+        sectionInfoUteis: "Informações úteis",
+        sectionAtendimento: "Atendimento",
+
+        downloadHint: "Acesso rápido para baixar e cadastrar.",
+        placeholderLinksNote: "Há links com placeholder. Substitua os campos de link na configuração (principalmente URL pública do QR)."
+      }
+    };
+  </script>
+
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <h1 class="siteTitle">Mercadinho Porto Itália</h1>
+          <p class="welcome" id="welcomeMessage"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="heroTop">
+          <p class="heroSubtitle" id="downloadHint"></p>
+          <p class="heroNote" id="uiPlaceholderNote" style="display:none;"></p>
+        </div>
+
+        <div class="buttonGrid">
+          <a class="btn primary large" id="btnGooglePlay" href="#" target="_blank" rel="noopener">
+            <span class="btnIcon" aria-hidden="true">▶</span>
+            <span class="btnText">Baixar aplicativo para Android</span>
+          </a>
+
+          <a class="btn primary large alt" id="btnAppStore" href="#" target="_blank" rel="noopener">
+            <span class="btnIcon" aria-hidden="true">▶</span>
+            <span class="btnText">Baixar aplicativo para iPhone</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="sectionTitle">Primeiros passos</h2>
+
+        <div class="steps">
+          <article class="card">
+            <h3 class="cardTitle">Como baixar o aplicativo</h3>
+            <ul class="list" id="stepDownload"></ul>
+          </article>
+
+          <article class="card">
+            <h3 class="cardTitle">Como realizar o cadastro</h3>
+            <ul class="list" id="stepCadastro"></ul>
+          </article>
+
+          <article class="card">
+            <h3 class="cardTitle">Como acessar o mercadinho</h3>
+            <ul class="list" id="stepAcesso"></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section altBg">
+      <div class="container">
+        <h2 class="sectionTitle">Informações úteis</h2>
+
+        <div class="infoGrid">
+          <div class="card">
+            <h3 class="cardTitle">Horário de funcionamento</h3>
+            <p class="muted" id="horario"></p>
+          </div>
+
+          <div class="card">
+            <h3 class="cardTitle">Formas de pagamento</h3>
+            <p class="muted" id="pagamento"></p>
+          </div>
+
+          <div class="card wide">
+            <h3 class="cardTitle">Como funciona o mercado autônomo</h3>
+            <p class="muted" id="comoFunciona"></p>
+          </div>
+
+          <div class="card wide">
+            <h3 class="cardTitle">Regras básicas de utilização</h3>
+            <p class="muted" id="regrasBasicas"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="sectionTitle">Atendimento</h2>
+
+        <div class="contact">
+          <a class="btn primary large whatsapp" id="btnWhatsApp" href="#" target="_blank" rel="noopener">
+            <span class="btnIcon" aria-hidden="true">💬</span>
+            <span class="btnText">Falar com o WhatsApp</span>
+          </a>
+
+          <div class="faq">
+            <h3 class="cardTitle" style="margin:0 0 10px;">Dúvidas frequentes</h3>
+            <div id="faqList" class="faqList"></div>
+          </div>
+        </div>
+
+        <p class="smallNote" id="genericNote"></p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div class="container footerRow">
+        <span class="footerText">Acesse pelo QR na porta do mercadinho.</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
