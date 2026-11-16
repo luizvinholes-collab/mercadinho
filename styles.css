@@ -1,15 +1,12 @@
 :root{
   --bg: #071a14;
-  --card: #0d2f24;
-  --card2: #0a241b;
   --text: #f3f8f6;
   --muted: rgba(243,248,246,.78);
   --muted2: rgba(243,248,246,.62);
 
   --primary: #0F3D2E;
-  --primary2: #1f6f52;
-  --accent: #49d17a;
 
+  --accent: #49d17a;
   --border: rgba(73,209,122,.25);
   --shadow: 0 12px 32px rgba(0,0,0,.35);
 
@@ -48,25 +45,21 @@ a{ color: inherit; text-decoration: none; }
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
-.brand{
+.headerInner{
   padding: 14px 0;
-  display: flex;
-  gap: 12px;
-  align-items: center;
+  display:flex;
+  justify-content:center;
+  text-align:center;
 }
 
-.brandMark{
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(73,209,122,.95), rgba(31,111,82,.85));
-  box-shadow: 0 0 0 6px rgba(73,209,122,.12);
+.headerText{
+  width: 100%;
 }
 
 .siteTitle{
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.2;
-  margin:0 0 4px;
+  margin:0 0 6px;
   letter-spacing: .2px;
 }
 
@@ -74,24 +67,15 @@ a{ color: inherit; text-decoration: none; }
   margin:0;
   font-size: 13px;
   color: var(--muted);
+  line-height: 1.5;
 }
 
 .hero{ padding: 18px 0 6px; }
 
-.heroTop{
-  display:flex;
-  flex-direction:column;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.heroSubtitle{ margin:0; color: var(--muted); font-size: 13px; }
-.heroNote{ margin:0; color: rgba(73,209,122,.95); font-size: 12px; }
-
 .buttonGrid{
   display:grid;
   gap: 12px;
-  margin: 12px 0 4px;
+  margin: 8px 0 8px;
 }
 
 .btn{
@@ -121,22 +105,30 @@ a{ color: inherit; text-decoration: none; }
 }
 
 .large{
-  min-height: 54px;
+  min-height: 56px;
   justify-content: center;
 }
 
 .btnIcon{
-  width: 30px;
-  height: 30px;
-  border-radius: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 14px;
   display:grid;
   place-items:center;
   background: rgba(255,255,255,.08);
   border: 1px solid rgba(255,255,255,.10);
-  font-size: 14px;
 }
 
-.btnText{ font-weight: 700; font-size: 15px; }
+.btnText{
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.smallNote{
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--muted2);
+}
 
 .section{ padding: 18px 0; }
 
@@ -170,67 +162,30 @@ a{ color: inherit; text-decoration: none; }
 
 .list{
   margin:0;
-  padding-left: 18px;
   color: var(--muted);
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
-.infoGrid{ display:grid; gap: 12px; }
-.card.wide{ padding: 14px; }
+.listNumbers{
+  padding-left: 18px;
+  margin: 0;
+}
+
+.listNumbers li{
+  margin: 8px 0;
+}
+
+.infoGrid{
+  display:grid;
+  gap: 12px;
+}
 
 .muted{
   margin: 0;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.6;
-  white-space: pre-wrap;
-}
-
-.contact{ display:grid; gap: 12px; }
-
-.faq{
-  background: rgba(255,255,255,.02);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: var(--radius);
-  padding: 12px;
-}
-
-.faqList{ display:grid; gap: 10px; }
-
-.faqItem{
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 14px;
-  background: rgba(255,255,255,.02);
-  overflow:hidden;
-}
-
-.faqBtn{
-  width: 100%;
-  text-align:left;
-  background: transparent;
-  border: none;
-  color: rgba(243,248,246,.95);
-  padding: 12px 12px;
-  font-weight: 700;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.faqAnswer{
-  padding: 0 12px 12px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-  display:none;
-}
-
-.faqItem[aria-expanded="true"] .faqAnswer{ display:block; }
-
-.smallNote{
-  margin: 12px 0 0;
-  font-size: 12px;
-  color: var(--muted2);
 }
 
 .footer{ padding: 18px 0 24px; }
@@ -241,8 +196,13 @@ a{ color: inherit; text-decoration: none; }
 .footerText{ color: rgba(243,248,246,.55); font-size: 12px; }
 
 @media (min-width: 760px){
-  .steps{ grid-template-columns: repeat(3, 1fr); }
-  .buttonGrid{ grid-template-columns: repeat(2, 1fr); }
-  .infoGrid{ grid-template-columns: repeat(2, 1fr); }
-  .card.wide{ grid-column: 1 / -1; }
+  .buttonGrid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .infoGrid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .large{
+    justify-content: center;
+  }
 }
